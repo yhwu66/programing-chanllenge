@@ -1,0 +1,115 @@
+<!-- slides.component.html -->
+
+<div class="container" style="margin-top:15px">
+    <div class="row justify-content-center">
+        
+        <div class="col-8 col-lg-6" style="padding: 0px;" >
+            <swiper #myswiper3 style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff;"
+                [spaceBetween]="10" [thumbs]="{ swiper: thumbsSwiper }" class="mySwiper2" id="dddd"
+                (mouseover)="magnify()" (slideChange)="onSlideChange()" [pagination]="true">
+                <ng-template swiperSlide class="ssss" id="sss1" >
+                    <div #div01 class="img-magnifier-container">
+                        <div #myglass1 class="img-magnifier-glass custom-class"></div>
+                        <img #img1 src="https://swiperjs.com/demos/images/nature-1.jpg" id="kkkk">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div #div01 class="img-magnifier-container">
+                        <div #myglass2 class="img-magnifier-glass custom-class"></div>
+                        <img #img2 src="https://swiperjs.com/demos/images/nature-2.jpg" id="kkkk">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div #div01 class="img-magnifier-container">
+                        <div #myglass3 class="img-magnifier-glass custom-class"></div>
+                        <img #img3 src="https://swiperjs.com/demos/images/nature-3.jpg" id="kkkk">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div #div01 class="img-magnifier-container">
+                        <div #myglass4 class="img-magnifier-glass custom-class"></div>
+                        <img #img4 src="https://swiperjs.com/demos/images/nature-4.jpg" id="kkkk">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div #div01 class="img-magnifier-container">
+                        <div #myglass5 class="img-magnifier-glass custom-class"></div>
+                        <img #img5 src="https://swiperjs.com/demos/images/nature-5.jpg" id="kkkk">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div #div01 class="img-magnifier-container">
+                        <div #myglass6 class="img-magnifier-glass custom-class"></div>
+                        <img #img6 src="https://swiperjs.com/demos/images/nature-6.jpg" id="kkkk">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div #div01 class="img-magnifier-container">
+                        <div #myglass7 class="img-magnifier-glass custom-class"></div>
+                        <img #img7 src="https://swiperjs.com/demos/images/nature-7.jpg" id="kkkk">
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div #div01 class="img-magnifier-container">
+                        <div #myglass8 class="img-magnifier-glass custom-class"></div>
+                        <img #img8 src="https://swiperjs.com/demos/images/nature-8.jpg" id="kkkk">
+                    </div>
+                </ng-template>
+            </swiper>
+        </div>
+       
+    </div>
+</div>
+
+
+<div class="container thumbcontainer">
+    <div class="row justify-content-center">
+        <div class="col-4 col-lg-4" style=" padding: 0px;">
+            <div style="height: 100%;margin: 0px;padding: 0px;">
+                <svg *ngIf="!isbegin" class="custom-class"
+                    style="width:10%;height:50px;margin-top:1%;margin-bottom:0%;margin-left:90%;cursor: pointer;"
+                    viewBox="0 0 24 24" id="chevron-right" (click)="swipePrev()">
+                    <path fill=black d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                </svg>
+                <svg *ngIf="isbegin" class="custom-class"
+                    style="width:10%;height:50px;margin-top:1%;margin-bottom:0%;margin-left:90%;cursor: pointer;"
+                    viewBox="0 0 24 24" id="chevron-right" (click)="swipePrev()">
+                    <path fill=grey d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                </svg>
+            </div>
+        </div>
+        <div class="col-4 col-lg-4" style="padding: 0px;" >
+            <swiper (swiper)="thumbsSwiper = $event" [spaceBetween]="5" [slidesPerView]="8" [freeMode]="true"
+                [watchSlidesProgress]="true" class="mySwiper" (click)="checkBegin()" >
+                <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-1.jpg"
+                         class="custom-class1"/></ng-template>
+                <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-2.jpg"
+                    class="custom-class1"/></ng-template>
+                <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-3.jpg"
+                    class="custom-class1"  /></ng-template>
+                <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-4.jpg"
+                    class="custom-class1"    /></ng-template>
+                <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-5.jpg"
+                    class="custom-class1"    /></ng-template>
+                <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-6.jpg"
+                    class="custom-class1"    /></ng-template>
+                <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-7.jpg"
+                    class="custom-class1"    /></ng-template>
+                <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-8.jpg"
+                    class="custom-class1" /></ng-template>
+            </swiper>
+        
+           
+        </div>
+        <div class="col-4 col-lg-4" style=" padding: 0px;">
+            <svg *ngIf="!isend" style="width:10%;height:50px;margin-top:1%;margin-left:0%;cursor: pointer;"
+                viewBox="0 0 24 24" id="chevron-right" (click)="swipeNext()" class="custom-class">
+                <path fill=black d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+            </svg>
+            <svg *ngIf="isend" style="width:10%;height:50px;margin-top:1%;margin-left:0%;cursor: pointer;"
+                viewBox="0 0 24 24" id="chevron-right" (click)="swipeNext()" class="custom-class">
+                <path fill=grey d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+            </svg>
+        </div>
+    </div>
+</div>
